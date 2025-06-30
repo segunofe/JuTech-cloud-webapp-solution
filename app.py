@@ -29,8 +29,7 @@ def upload_file():
         s3_client.upload_fileobj(
             file,
             S3_BUCKET_NAME,
-            file.filename,
-            ExtraArgs={'ACL': 'public-read'}  # Optional: adjust based on your use case
+            file.filename
         )
         return redirect(url_for('index'))
     
